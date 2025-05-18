@@ -47,8 +47,8 @@ namespace TPLR3.Sasha
                 for (int i = 0; i < specificData.GetListOfSpecificData().Count; i++)
                 { // Ризование графика для всех данных в классе
                     chart.Series[chartIndex].Points.AddXY(
-                        statisticData.GetAllData().Item1[i].ToString("yyyy"), 
-                        specificData.GetListOfSpecificData()[i]);
+                        statisticData.GetAllData().Item1[i], 
+                        float.Parse(specificData.GetListOfSpecificData()[i].ToString()));
                 }
             }
             return chart;

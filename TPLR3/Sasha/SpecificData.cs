@@ -15,8 +15,9 @@ namespace TPLR3.Sasha
         {
             this.name = name;
         }
-        public abstract List<string> GetListOfSpecificData();
+        public abstract List<Object> GetListOfSpecificData();
         public abstract void AddToSpecificlist(Object data);
+        public abstract void RemoveAt(int i);
     }
     public class FloatData: SpecificData
     {
@@ -25,9 +26,9 @@ namespace TPLR3.Sasha
         {
             this.specificData = new List<float>();
         }
-        public override List<string> GetListOfSpecificData()
+        public override List<Object> GetListOfSpecificData()
         {
-            List<string> list = new List<string>();
+            List<Object> list = new List<Object>();
             foreach (var item in specificData)
                 list.Add(item.ToString());
             return list;
@@ -35,6 +36,10 @@ namespace TPLR3.Sasha
         public override void AddToSpecificlist(Object data)
         {
             specificData.Add(float.Parse(data.ToString()));
+        }
+        public override void RemoveAt(int i)
+        {
+            specificData.RemoveAt(i);
         }
     }
 }

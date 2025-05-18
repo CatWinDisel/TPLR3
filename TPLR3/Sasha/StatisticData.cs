@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace TPLR3.Sasha
@@ -40,29 +41,33 @@ namespace TPLR3.Sasha
             // Заполнение скользящего окна
             for (int j = 0; j < slideWindowList.Count; j++)
             {
+                float onesum = 0;
                 for (int i = 0; i < size; i++)
                 {
-                    slideWindowList[j].AddToSpecificlist(datas[j].GetListOfSpecificData()[count - size + i]);
+                    slideWindowList[j].AddToSpecificlist(datas[j].GetListOfSpecificData()[count - size + 1 + i]);
+                    onesum += float.Parse(datas[j].GetListOfSpecificData()[count + 1 - size + i].ToString());
                 }
                 // Нахождение суммы в скользящем окне
-                sum.Add(slideWindowList[j].GetListOfSpecificData().Sum(x => float.Parse(x)));
+                sum.Add(onesum);
             }
             // Расчёт прогноза
             for (int i = 0; i < length; i++)
             {
                 lastDate = NextDate(lastDate, timeStep); // Вычисление новой даты
+
                 predictionData.dates.Add(lastDate);
                 for (int j = 0; j < datas.Count; j++)
                 {
                     // Добавление в таблицу прогноза новых значений
-                    predictionData.datas[j].AddToSpecificlist(sum[j] / size);
+                    predictionData.datas[j].AddToSpecificlist(sum[j] / size); 
                     // Добавление в скользящее окно новое значение
                     slideWindowList[j].AddToSpecificlist(sum[j] / size); 
                     // Высчитываение новой суммы
-                    sum[j] += (sum[j] / size - float.Parse(slideWindowList[j].GetListOfSpecificData()[0]));
+                    sum[j] += (sum[j] / size - float.Parse(slideWindowList[j].GetListOfSpecificData()[0].ToString())); 
                     // Удаление из скользящего окна первого значения
-                    slideWindowList[j].GetListOfSpecificData().RemoveAt(0); 
+                    slideWindowList[j].RemoveAt(0); 
                 }
+                
             }
             return predictionData;
         }
@@ -85,7 +90,7 @@ namespace TPLR3.Sasha
         {
             InflationData temp = new InflationData();
             temp.CreateStatisticData();
-            return this.CreatePrediction(new InflationData(), temp.datas, new List<float>(), size, length);
+            return this.CreatePrediction(new InflationData(), temp.GetAllData().Item2, new List<float>(), size, length);
         }
     }
 }
