@@ -77,7 +77,8 @@ namespace TPLR3
                 //Настраиваем таблицу на форме
                 dataGridView2.DataSource = BuildDataTable(migration.dateTimes, migration.Immigrants, migration.Emigrants);
 
-                
+                //Разблокируем 2 кнопку (в случае, когда надо обновить данные)
+                button2.Enabled = true;
             }
             else
             {
@@ -181,11 +182,14 @@ namespace TPLR3
         //Вкладка Kirill: Кнопка для построения графика по прогнозу
         private void button3_Click(object sender, EventArgs e)
         {
+            //Блокируем 2 кнопку
+            button2.Enabled = false;
+
             //Построение графика по прогнозу с параметрами N лет прогноза и размера окна windowSize
             migration.Year_MovingAverageForecast((int)numericUpDown1.Value, (int)numericUpDown2.Value);
 
             //Отрисовка графика
-            DrawTwoLineCharts(chart1, migration.dateTimes, migration.Immigrants, migration.Emigrants);
+            DrawTwoLineCharts(chart2, migration.dateTimes, migration.Immigrants, migration.Emigrants);
         }
 
         //Вкладка Kirill: Кнопка для подсчета максимального процента миграции (по модулю)
