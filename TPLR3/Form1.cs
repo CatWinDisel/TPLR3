@@ -131,7 +131,8 @@ namespace TPLR3
             {
                 //Строим график (начальный)
                 DrawTwoLineCharts(chart1, migration.dateTimes, migration.Immigrants, migration.Emigrants);
-
+                //Высчитываем максимальный процент изменения миграции за год
+                migration.ComputeChange();
             }
             else
             {
