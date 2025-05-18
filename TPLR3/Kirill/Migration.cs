@@ -27,6 +27,10 @@ namespace TPLR3.Kirill
         //Рассчет статистики (может использоваться для вывода исходной статистики, полученной из файла)
         public void ComputeChange()
         {
+            //Обновляем списки
+            Difference.Clear();
+            Migration_Procent_Change.Clear();
+
             //Подсчитываем количество дат для составления статистики
             int max_index = dateTimes.Count;
 
@@ -57,10 +61,10 @@ namespace TPLR3.Kirill
                 Migration_Procent_Change.Add(100 * (Difference[i] - Difference[i - 1]) / Difference[i - 1]);
             }
         }
-        // Метод для возврацения максимального изменения миграции за год
+        //Метод для возврацения максимального изменения миграции за год (по модулю)
         public float ReturnMax()
         {
-            return Migration_Procent_Change.Max();
+            return Migration_Procent_Change.Max(x => Math.Abs(x));
         }
 
         //Задать число просчетов статистики скользящим методом (на последующие N (yearsAhead) лет)
