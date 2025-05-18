@@ -94,6 +94,11 @@
     <Compile Include="Kirill\Migration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sasha\Converter.cs" />
+    <Compile Include="Sasha\Facade.cs" />
+    <Compile Include="Sasha\FileReader.cs" />
+    <Compile Include="Sasha\SpecificData.cs" />
+    <Compile Include="Sasha\StatisticData.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
