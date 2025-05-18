@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -62,6 +64,7 @@
             this.label_Sasha_Price = new System.Windows.Forms.Label();
             this.numericUpDown_Sasha_Price = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -76,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart_Sasha)).BeginInit();
             this.panel_Sasha_PricePrediction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sasha_Price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,6 +106,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chart2);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -223,13 +228,13 @@
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(423, 165);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(657, 453);
+            this.chart1.Size = new System.Drawing.Size(657, 213);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -348,10 +353,10 @@
             // 
             // chart_Sasha
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chart_Sasha.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chart_Sasha.Legends.Add(legend10);
+            chartArea3.Name = "ChartArea1";
+            this.chart_Sasha.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart_Sasha.Legends.Add(legend3);
             this.chart_Sasha.Location = new System.Drawing.Point(414, 123);
             this.chart_Sasha.Margin = new System.Windows.Forms.Padding(2);
             this.chart_Sasha.Name = "chart_Sasha";
@@ -446,6 +451,18 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(423, 384);
+            this.chart2.Name = "chart2";
+            this.chart2.Size = new System.Drawing.Size(657, 241);
+            this.chart2.TabIndex = 12;
+            this.chart2.Text = "chart2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +488,7 @@
             this.panel_Sasha_PricePrediction.ResumeLayout(false);
             this.panel_Sasha_PricePrediction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sasha_Price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -507,6 +525,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }
 
