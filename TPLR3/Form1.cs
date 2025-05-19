@@ -27,7 +27,7 @@ namespace TPLR3
         {
             if (currencyStatistics != null)
             {
-                chart1.Series.Clear();
+                chartVar2.Series.Clear();
                 var seriesUSD = new Series("Курс USD");
                 var seriesEU = new Series("Курс Euro");
                 var predictionSereisUSD = new Series("Прогноз курса USD");
@@ -47,18 +47,18 @@ namespace TPLR3
                 predictionSereisUSD.Points.AddXY(currencyStatistics.dateTimes[last_index], currencyStatistics.Rub_To_USD_Сourse[last_index]);
                 predictionSereisEU.Points.AddXY(currencyStatistics.dateTimes[last_index], currencyStatistics.Rub_To_EU_Сourse[last_index]);
 
-                chart1.Series.Add(seriesUSD);
-                chart1.Series.Add(seriesEU);
-                chart1.Series.Add(predictionSereisUSD);
-                chart1.Series.Add(predictionSereisEU);
+                chartVar2.Series.Add(seriesUSD);
+                chartVar2.Series.Add(seriesEU);
+                chartVar2.Series.Add(predictionSereisUSD);
+                chartVar2.Series.Add(predictionSereisEU);
 
                 // Форматируем ось X под даты
-                chart1.ChartAreas[0].AxisY.Minimum = 82;
-                chart1.ChartAreas[0].AxisY.Maximum = 110;
-                chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
-                chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-                chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-                chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+                chartVar2.ChartAreas[0].AxisY.Minimum = 82;
+                chartVar2.ChartAreas[0].AxisY.Maximum = 110;
+                chartVar2.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
+                chartVar2.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+                chartVar2.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+                chartVar2.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
             }
         }
 
@@ -68,8 +68,8 @@ namespace TPLR3
             
             try
             {
-                var usdChart = chart1.Series["Прогноз курса USD"];
-                var euChart = chart1.Series["Прогноз курса EU"];
+                var usdChart = chartVar2.Series["Прогноз курса USD"];
+                var euChart = chartVar2.Series["Прогноз курса EU"];
 
                 computeVar2.MovingAverageMethod(window_size);
                 int index = currencyStatistics.dateTimes.Count;
@@ -80,23 +80,25 @@ namespace TPLR3
             catch { }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonVar2_Click(object sender, EventArgs e)
         {
-            computeVar2.ComputeChange();
-            computeVar2.GetMaxChanges();
-            labelMaxDiffUSD.Text = computeVar2.change_statistics.Rub_To_USD_Changes[currencyStatistics.maxUsdIndex].ToString("F2");
-            labelMaxDiffUSD.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.maxUsdIndex].ToString("yyyy-MM-dd");
+            if (computeVar2 != null)
+            {
+                computeVar2.ComputeChange();
+                computeVar2.GetMaxChanges();
+                labelMaxDiffUSD.Text = computeVar2.change_statistics.Rub_To_USD_Changes[currencyStatistics.maxUsdIndex].ToString("F2");
+                labelMaxDiffUSD.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.maxUsdIndex].ToString("yyyy-MM-dd");
 
-            labelMaxDiffUSDmn.Text = computeVar2.change_statistics.Rub_To_USD_Changes[currencyStatistics.minUsdIndex].ToString("F2");
-            labelMaxDiffUSDmn.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.minUsdIndex].ToString("yyyy-MM-dd");
+                labelMaxDiffUSDmn.Text = computeVar2.change_statistics.Rub_To_USD_Changes[currencyStatistics.minUsdIndex].ToString("F2");
+                labelMaxDiffUSDmn.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.minUsdIndex].ToString("yyyy-MM-dd");
 
 
-            labelMaxDiffEU.Text = computeVar2.change_statistics.Rub_To_EU_Changes[currencyStatistics.maxEuIndex].ToString("F2");
-            labelMaxDiffEU.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.maxEuIndex].ToString("yyyy-MM-dd");
+                labelMaxDiffEU.Text = computeVar2.change_statistics.Rub_To_EU_Changes[currencyStatistics.maxEuIndex].ToString("F2");
+                labelMaxDiffEU.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.maxEuIndex].ToString("yyyy-MM-dd");
 
-            labelMaxDiffEUmn.Text = computeVar2.change_statistics.Rub_To_EU_Changes[currencyStatistics.minEuIndex].ToString("F2");
-            labelMaxDiffEUmn.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.minEuIndex].ToString("yyyy-MM-dd");
-
+                labelMaxDiffEUmn.Text = computeVar2.change_statistics.Rub_To_EU_Changes[currencyStatistics.minEuIndex].ToString("F2");
+                labelMaxDiffEUmn.Text += " " + computeVar2.change_statistics.Dates[currencyStatistics.minEuIndex].ToString("yyyy-MM-dd");
+            }
         }
 
         private void buttonOpenFileVar2_Click(object sender, EventArgs e)

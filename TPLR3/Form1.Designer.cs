@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonOpenFileVar2 = new System.Windows.Forms.Button();
             this.label1Var2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonVar2 = new System.Windows.Forms.Button();
+            this.panelvar2 = new System.Windows.Forms.Panel();
             this.labelEuro = new System.Windows.Forms.Label();
             this.labelUSD = new System.Windows.Forms.Label();
             this.labelMaxDiffEUmn = new System.Windows.Forms.Label();
@@ -46,14 +46,14 @@
             this.numericUpDownWindowSizeVar2 = new System.Windows.Forms.NumericUpDown();
             this.buttonPredictionVar2 = new System.Windows.Forms.Button();
             this.buttonGrafVar2 = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartVar2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelvar2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWindowSizeVar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVar2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,12 +71,12 @@
             // 
             this.tabPage1.Controls.Add(this.buttonOpenFileVar2);
             this.tabPage1.Controls.Add(this.label1Var2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.buttonVar2);
+            this.tabPage1.Controls.Add(this.panelvar2);
             this.tabPage1.Controls.Add(this.numericUpDownWindowSizeVar2);
             this.tabPage1.Controls.Add(this.buttonPredictionVar2);
             this.tabPage1.Controls.Add(this.buttonGrafVar2);
-            this.tabPage1.Controls.Add(this.chart1);
+            this.tabPage1.Controls.Add(this.chartVar2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -104,28 +104,28 @@
             this.label1Var2.TabIndex = 7;
             this.label1Var2.Text = "Размер окна";
             // 
-            // button1
+            // buttonVar2
             // 
-            this.button1.Location = new System.Drawing.Point(8, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Max/Min Изменения курса";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonVar2.Location = new System.Drawing.Point(8, 388);
+            this.buttonVar2.Name = "buttonVar2";
+            this.buttonVar2.Size = new System.Drawing.Size(165, 39);
+            this.buttonVar2.TabIndex = 6;
+            this.buttonVar2.Text = "Max/Min Изменения курса";
+            this.buttonVar2.UseVisualStyleBackColor = true;
+            this.buttonVar2.Click += new System.EventHandler(this.buttonVar2_Click);
             // 
-            // panel1
+            // panelvar2
             // 
-            this.panel1.Controls.Add(this.labelEuro);
-            this.panel1.Controls.Add(this.labelUSD);
-            this.panel1.Controls.Add(this.labelMaxDiffEUmn);
-            this.panel1.Controls.Add(this.labelMaxDiffEU);
-            this.panel1.Controls.Add(this.labelMaxDiffUSDmn);
-            this.panel1.Controls.Add(this.labelMaxDiffUSD);
-            this.panel1.Location = new System.Drawing.Point(8, 249);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 132);
-            this.panel1.TabIndex = 5;
+            this.panelvar2.Controls.Add(this.labelEuro);
+            this.panelvar2.Controls.Add(this.labelUSD);
+            this.panelvar2.Controls.Add(this.labelMaxDiffEUmn);
+            this.panelvar2.Controls.Add(this.labelMaxDiffEU);
+            this.panelvar2.Controls.Add(this.labelMaxDiffUSDmn);
+            this.panelvar2.Controls.Add(this.labelMaxDiffUSD);
+            this.panelvar2.Location = new System.Drawing.Point(8, 249);
+            this.panelvar2.Name = "panelvar2";
+            this.panelvar2.Size = new System.Drawing.Size(165, 132);
+            this.panelvar2.TabIndex = 5;
             // 
             // labelEuro
             // 
@@ -223,20 +223,20 @@
             this.buttonGrafVar2.UseVisualStyleBackColor = true;
             this.buttonGrafVar2.Click += new System.EventHandler(this.buttonGrafVar2_Click);
             // 
-            // chart1
+            // chartVar2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(217, 6);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(863, 613);
-            this.chart1.TabIndex = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chartVar2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartVar2.Legends.Add(legend1);
+            this.chartVar2.Location = new System.Drawing.Point(217, 6);
+            this.chartVar2.Name = "chartVar2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartVar2.Series.Add(series1);
+            this.chartVar2.Size = new System.Drawing.Size(863, 613);
+            this.chartVar2.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -268,10 +268,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelvar2.ResumeLayout(false);
+            this.panelvar2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWindowSizeVar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,13 +282,13 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartVar2;
         private System.Windows.Forms.Button buttonGrafVar2;
         private System.Windows.Forms.Button buttonPredictionVar2;
         private System.Windows.Forms.NumericUpDown numericUpDownWindowSizeVar2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelvar2;
         private System.Windows.Forms.Label labelMaxDiffUSD;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonVar2;
         private System.Windows.Forms.Label labelMaxDiffUSDmn;
         private System.Windows.Forms.Label labelMaxDiffEUmn;
         private System.Windows.Forms.Label labelMaxDiffEU;
