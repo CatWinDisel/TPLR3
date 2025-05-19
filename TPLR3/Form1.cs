@@ -141,7 +141,9 @@ namespace TPLR3
         }
 
         //Вкладка Sasha:
-        private void button_Sasha_openFile_Click(object sender, EventArgs e)
+
+
+        private void button_Sasha_openFile_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -317,7 +319,5 @@ namespace TPLR3
             migration.ComputeChange();
             textBox1.Text = migration.ReturnMax().ToString();
         }
-
-        
     }
 }

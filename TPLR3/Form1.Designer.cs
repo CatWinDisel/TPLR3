@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -54,6 +54,7 @@
             this.buttonPredictionVar2 = new System.Windows.Forms.Button();
             this.buttonGrafVar2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             this.textBox_Sasha_ProductName = new System.Windows.Forms.TextBox();
             this.label_Sasha_Price = new System.Windows.Forms.Label();
             this.numericUpDown_Sasha_Price = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button_Sasha_openFile = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -111,7 +112,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1463, 801);
@@ -128,9 +129,9 @@
             this.tabPage1.Controls.Add(this.numericUpDownWindowSizeVar2);
             this.tabPage1.Controls.Add(this.buttonPredictionVar2);
             this.tabPage1.Controls.Add(this.buttonGrafVar2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1455, 772);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Michial";
@@ -141,15 +142,16 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(713, 475);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.Size = new System.Drawing.Size(367, 131);
             this.dataGridView3.TabIndex = 10;
             // 
             // chartMisha
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartMisha.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartMisha.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartMisha.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartMisha.Legends.Add(legend1);
             this.chartMisha.Location = new System.Drawing.Point(179, 6);
             this.chartMisha.Name = "chartMisha";
             this.chartMisha.Size = new System.Drawing.Size(901, 461);
@@ -171,7 +173,7 @@
             this.label1Var2.AutoSize = true;
             this.label1Var2.Location = new System.Drawing.Point(8, 105);
             this.label1Var2.Name = "label1Var2";
-            this.label1Var2.Size = new System.Drawing.Size(73, 13);
+            this.label1Var2.Size = new System.Drawing.Size(91, 16);
             this.label1Var2.TabIndex = 7;
             this.label1Var2.Text = "Размер окна";
             // 
@@ -203,7 +205,7 @@
             this.labelEuro.AutoSize = true;
             this.labelEuro.Location = new System.Drawing.Point(5, 58);
             this.labelEuro.Name = "labelEuro";
-            this.labelEuro.Size = new System.Drawing.Size(29, 13);
+            this.labelEuro.Size = new System.Drawing.Size(35, 16);
             this.labelEuro.TabIndex = 5;
             this.labelEuro.Text = "Euro";
             // 
@@ -212,7 +214,7 @@
             this.labelUSD.AutoSize = true;
             this.labelUSD.Location = new System.Drawing.Point(5, 8);
             this.labelUSD.Name = "labelUSD";
-            this.labelUSD.Size = new System.Drawing.Size(30, 13);
+            this.labelUSD.Size = new System.Drawing.Size(36, 16);
             this.labelUSD.TabIndex = 4;
             this.labelUSD.Text = "USD";
             // 
@@ -221,7 +223,7 @@
             this.labelMaxDiffEUmn.AutoSize = true;
             this.labelMaxDiffEUmn.Location = new System.Drawing.Point(4, 84);
             this.labelMaxDiffEUmn.Name = "labelMaxDiffEUmn";
-            this.labelMaxDiffEUmn.Size = new System.Drawing.Size(91, 13);
+            this.labelMaxDiffEUmn.Size = new System.Drawing.Size(115, 16);
             this.labelMaxDiffEUmn.TabIndex = 3;
             this.labelMaxDiffEUmn.Text = "МакспадениеEU";
             // 
@@ -230,7 +232,7 @@
             this.labelMaxDiffEU.AutoSize = true;
             this.labelMaxDiffEU.Location = new System.Drawing.Point(4, 71);
             this.labelMaxDiffEU.Name = "labelMaxDiffEU";
-            this.labelMaxDiffEU.Size = new System.Drawing.Size(90, 13);
+            this.labelMaxDiffEU.Size = new System.Drawing.Size(111, 16);
             this.labelMaxDiffEU.TabIndex = 2;
             this.labelMaxDiffEU.Text = "МаксПодъемEU";
             // 
@@ -239,7 +241,7 @@
             this.labelMaxDiffUSDmn.AutoSize = true;
             this.labelMaxDiffUSDmn.Location = new System.Drawing.Point(4, 35);
             this.labelMaxDiffUSDmn.Name = "labelMaxDiffUSDmn";
-            this.labelMaxDiffUSDmn.Size = new System.Drawing.Size(101, 13);
+            this.labelMaxDiffUSDmn.Size = new System.Drawing.Size(127, 16);
             this.labelMaxDiffUSDmn.TabIndex = 1;
             this.labelMaxDiffUSDmn.Text = "МаксПадениеUSD";
             // 
@@ -248,7 +250,7 @@
             this.labelMaxDiffUSD.AutoSize = true;
             this.labelMaxDiffUSD.Location = new System.Drawing.Point(3, 22);
             this.labelMaxDiffUSD.Name = "labelMaxDiffUSD";
-            this.labelMaxDiffUSD.Size = new System.Drawing.Size(98, 13);
+            this.labelMaxDiffUSD.Size = new System.Drawing.Size(121, 16);
             this.labelMaxDiffUSD.TabIndex = 0;
             this.labelMaxDiffUSD.Text = "МаксПодъемUSD";
             // 
@@ -266,7 +268,7 @@
             0,
             0});
             this.numericUpDownWindowSizeVar2.Name = "numericUpDownWindowSizeVar2";
-            this.numericUpDownWindowSizeVar2.Size = new System.Drawing.Size(142, 20);
+            this.numericUpDownWindowSizeVar2.Size = new System.Drawing.Size(142, 22);
             this.numericUpDownWindowSizeVar2.TabIndex = 4;
             this.numericUpDownWindowSizeVar2.Value = new decimal(new int[] {
             2,
@@ -311,31 +313,40 @@
             this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1455, 772);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kirill";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(74, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(267, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Таблица с исходными данными(тыс.чел)";
+            // 
             // chart2
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
-            this.chart2.Location = new System.Drawing.Point(423, 384);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(398, 433);
             this.chart2.Name = "chart2";
-            this.chart2.Size = new System.Drawing.Size(657, 241);
+            this.chart2.Size = new System.Drawing.Size(901, 273);
             this.chart2.TabIndex = 12;
             this.chart2.Text = "chart2";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(861, 126);
+            this.button4.Location = new System.Drawing.Point(1137, 81);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(112, 36);
             this.button4.TabIndex = 11;
             this.button4.Text = "Подсчитать";
             this.button4.UseVisualStyleBackColor = true;
@@ -344,7 +355,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(775, 47);
+            this.label3.Location = new System.Drawing.Point(763, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 16);
@@ -354,7 +365,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(612, 47);
+            this.label2.Location = new System.Drawing.Point(600, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 16);
@@ -363,8 +374,8 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(793, 66);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown2.Location = new System.Drawing.Point(781, 55);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
@@ -381,8 +392,8 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(603, 66);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Location = new System.Drawing.Point(591, 55);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -399,8 +410,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(663, 98);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(651, 87);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(229, 49);
             this.button3.TabIndex = 6;
@@ -410,8 +421,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(267, 39);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(248, 49);
             this.button2.TabIndex = 5;
@@ -421,8 +432,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(36, 98);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(36, 39);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 49);
             this.button1.TabIndex = 4;
@@ -433,7 +444,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1029, 103);
+            this.label1.Location = new System.Drawing.Point(1030, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(348, 16);
@@ -443,18 +454,18 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(1120, 123);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(1123, 52);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 22);
             this.textBox1.TabIndex = 2;
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(423, 165);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(876, 262);
@@ -466,7 +477,8 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(22, 165);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(370, 443);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(370, 549);
             this.dataGridView2.TabIndex = 0;
             // 
             // tabPage3
@@ -477,7 +489,7 @@
             this.tabPage3.Controls.Add(this.chart_Sasha);
             this.tabPage3.Controls.Add(this.panel_Sasha_PricePrediction);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1455, 772);
             this.tabPage3.TabIndex = 2;
@@ -576,14 +588,14 @@
             // 
             // chart_Sasha
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart_Sasha.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart_Sasha.Legends.Add(legend8);
-            this.chart_Sasha.Location = new System.Drawing.Point(414, 123);
+            chartArea4.Name = "ChartArea1";
+            this.chart_Sasha.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart_Sasha.Legends.Add(legend4);
+            this.chart_Sasha.Location = new System.Drawing.Point(551, 151);
             this.chart_Sasha.Margin = new System.Windows.Forms.Padding(2);
             this.chart_Sasha.Name = "chart_Sasha";
-            this.chart_Sasha.Size = new System.Drawing.Size(893, 470);
+            this.chart_Sasha.Size = new System.Drawing.Size(877, 525);
             this.chart_Sasha.TabIndex = 0;
             this.chart_Sasha.Text = "chart1";
             // 
@@ -662,14 +674,15 @@
             0,
             0});
             // 
-            // label4
+            // button_Sasha_openFile
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(117, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Таблица с исходными данными";
+            this.button_Sasha_openFile.Location = new System.Drawing.Point(26, 31);
+            this.button_Sasha_openFile.Name = "button_Sasha_openFile";
+            this.button_Sasha_openFile.Size = new System.Drawing.Size(111, 42);
+            this.button_Sasha_openFile.TabIndex = 9;
+            this.button_Sasha_openFile.Text = "OpenFile";
+            this.button_Sasha_openFile.UseVisualStyleBackColor = true;
+            this.button_Sasha_openFile.Click += new System.EventHandler(this.button_Sasha_openFile_Click_1);
             // 
             // Form1
             // 
@@ -677,7 +690,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1463, 802);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
@@ -758,6 +771,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMisha;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button_Sasha_openFile;
     }
 }
 
