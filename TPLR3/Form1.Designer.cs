@@ -37,7 +37,7 @@
             this.label1Var2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEuro = new System.Windows.Forms.Label();
             this.labelUSD = new System.Windows.Forms.Label();
             this.labelMaxDiffEUmn = new System.Windows.Forms.Label();
             this.labelMaxDiffEU = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelEuro);
             this.panel1.Controls.Add(this.labelUSD);
             this.panel1.Controls.Add(this.labelMaxDiffEUmn);
             this.panel1.Controls.Add(this.labelMaxDiffEU);
@@ -127,14 +127,14 @@
             this.panel1.Size = new System.Drawing.Size(165, 132);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // labelEuro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Euro";
+            this.labelEuro.AutoSize = true;
+            this.labelEuro.Location = new System.Drawing.Point(5, 58);
+            this.labelEuro.Name = "labelEuro";
+            this.labelEuro.Size = new System.Drawing.Size(29, 13);
+            this.labelEuro.TabIndex = 5;
+            this.labelEuro.Text = "Euro";
             // 
             // labelUSD
             // 
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label labelMaxDiffEUmn;
         private System.Windows.Forms.Label labelMaxDiffEU;
         private System.Windows.Forms.Label label1Var2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEuro;
         private System.Windows.Forms.Label labelUSD;
         private System.Windows.Forms.Button buttonOpenFileVar2;
     }
