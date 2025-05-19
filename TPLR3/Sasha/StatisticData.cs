@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace TPLR3.Sasha
 {
@@ -91,6 +90,37 @@ namespace TPLR3.Sasha
             InflationData temp = new InflationData();
             temp.CreateStatisticData();
             return this.CreatePrediction(new InflationData(), temp.GetAllData().Item2, new List<float>(), size, length);
+        }
+    }
+    public class SheetData : StatisticData
+    {
+        public override void CreateStatisticData()
+        {
+            datas.Add(new FloatData("Currency_USD"));
+            datas.Add(new FloatData("Currency_EUR"));
+        }
+        public override StatisticData GetPrediction(int size, int length)
+        {
+            SheetData temp = new SheetData();
+            temp.CreateStatisticData();
+            return this.CreatePrediction(new SheetData(), temp.GetAllData().Item2, new List<float>(), size, length);
+        }
+        public string FindMaxCourseChange()
+        {
+            List<float> maxList = new List<float>();
+            string text = "";
+            foreach (SpecificData specificData in datas)
+            {
+                float max = 0f;
+                for (int i = 1; i < specificData.GetListOfSpecificData().Count; i++)
+                {
+                    float temp = Math.Abs(float.Parse(specificData.GetListOfSpecificData()[i].ToString()) - float.Parse(specificData.GetListOfSpecificData()[i - 1].ToString()));
+                    if (max < temp)
+                        max = temp;
+                }
+                text += specificData.name + " max change is " + max + "\n";
+            }
+            return text;
         }
     }
 }

@@ -22,28 +22,23 @@ namespace TPLR3
         }
 
         //Вкладка Sasha:
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button_Sasha_openFile_Click(object sender, EventArgs e)
         {
-            switch (tabControl1.SelectedIndex)
+            try
             {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    SashaCode = new Sasha.Facade();
-                    dataGridView1.DataSource = SashaCode.CreateDataTable();
-                    numericUpDown_Sasha_Size.Maximum = SashaCode.GetMaxSize();
-                    panel_Sasha.Visible = true;
-                    break;
+                SashaCode = new Sasha.Facade(new Sasha.InflationData());
+                dataGridView_Sasha.DataSource = SashaCode.CreateDataTable();
+                numericUpDown_Sasha_Size.Maximum = SashaCode.GetMaxSize();
+                panel_Sasha.Visible = true;
+                panel_Sasha_PricePrediction.Visible = false;
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
         private void button_Sasha_Start_Click(object sender, EventArgs e)
         {
             SashaCode.DrawChart(chart_Sasha, (int)numericUpDown_Sasha_Size.Value, (int)numericUpDown_Sasha_Lenght.Value);
             panel_Sasha_PricePrediction.Visible = true;
-            button_Sasha_PricePrediction.Text = "Make Price prediction for " + numericUpDown_Sasha_Lenght + " years";
+            button_Sasha_PricePrediction.Text = "Make Price prediction for " + numericUpDown_Sasha_Lenght.Value + " years";
         }
 
         private void button_Sasha_PricePrediction_Click(object sender, EventArgs e)
@@ -94,7 +89,7 @@ namespace TPLR3
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 string pathNow = Directory.GetCurrentDirectory();
-                pathNow = pathNow.Remove(pathNow.Length - 29);
+                pathNow = pathNow.Remove(pathNow.Length - 16);
                 openFileDialog.InitialDirectory = pathNow;
 
                 openFileDialog.Filter = "Excel Files|*.xls;*xlsx;*.xlsm";
@@ -200,5 +195,7 @@ namespace TPLR3
             migration.ComputeChange();
             textBox1.Text = migration.ReturnMax().ToString();
         }
+
+        
     }
 }

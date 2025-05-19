@@ -16,10 +16,10 @@ namespace TPLR3.Sasha
         private StatisticData predictionData;
         private FileReader reader;
         private Converter converter;
-        public Facade()
+        public Facade(StatisticData dataType)
         {
             path = "";
-            statisticData = new InflationData();
+            statisticData = dataType;
             statisticData.CreateStatisticData();
             reader = new FileReader();
             converter = new Converter();
@@ -27,8 +27,13 @@ namespace TPLR3.Sasha
         public DataTable CreateDataTable ()
         {
             path = reader.GetFilePath();
-            reader.ReadFromExcel(ref statisticData, path);
-            return converter.ConvertToDataTable(statisticData);
+            if (path != "")
+            {
+                reader.ReadFromExcel(ref statisticData, path);
+                return converter.ConvertToDataTable(statisticData);
+            }
+            else  
+                throw new Exception("Ошибка при открытии или чтении файла!"); 
         }
         public void DrawChart (Chart chart, int size, int lenght)
         {
