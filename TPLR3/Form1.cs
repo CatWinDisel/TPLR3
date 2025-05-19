@@ -29,7 +29,7 @@ namespace TPLR3
         {
             if (currencyStatistics != null)
             {
-                chartVar2.Series.Clear();
+                chartMisha.Series.Clear();
                 var seriesUSD = new Series("Курс USD");
                 var seriesEU = new Series("Курс Euro");
                 var predictionSereisUSD = new Series("Прогноз курса USD");
@@ -49,18 +49,17 @@ namespace TPLR3
                 predictionSereisUSD.Points.AddXY(currencyStatistics.dateTimes[last_index], currencyStatistics.Rub_To_USD_Сourse[last_index]);
                 predictionSereisEU.Points.AddXY(currencyStatistics.dateTimes[last_index], currencyStatistics.Rub_To_EU_Сourse[last_index]);
 
-                chartVar2.Series.Add(seriesUSD);
-                chartVar2.Series.Add(seriesEU);
-                chartVar2.Series.Add(predictionSereisUSD);
-                chartVar2.Series.Add(predictionSereisEU);
+                chartMisha.Series.Add(seriesUSD);
+                chartMisha.Series.Add(seriesEU);
+                chartMisha.Series.Add(predictionSereisUSD);
+                chartMisha.Series.Add(predictionSereisEU);
 
                 // Форматируем ось X под даты
-                chartVar2.ChartAreas[0].AxisY.Minimum = 82;
-                chartVar2.ChartAreas[0].AxisY.Maximum = 110;
-                chartVar2.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
-                chartVar2.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-                chartVar2.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-                chartVar2.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+                chartMisha.ChartAreas[0].AxisY.Minimum = 82;
+                chartMisha.ChartAreas[0].AxisY.Maximum = 110;
+                chartMisha.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+                chartMisha.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+                chartMisha.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
             }
         }
 
@@ -70,8 +69,8 @@ namespace TPLR3
             
             try
             {
-                var usdChart = chartVar2.Series["Прогноз курса USD"];
-                var euChart = chartVar2.Series["Прогноз курса EU"];
+                var usdChart = chartMisha.Series["Прогноз курса USD"];
+                var euChart = chartMisha.Series["Прогноз курса EU"];
 
                 computeVar2.MovingAverageMethod(window_size);
                 int index = currencyStatistics.dateTimes.Count;
@@ -120,6 +119,19 @@ namespace TPLR3
                 importClassVar2.ImportThreeFloatColumnsByName(path, "Date", "Currency_USD", "Currency_EUR", out dates, out list1, out list2);
                 currencyStatistics = new CurrencyStatistics(dates, list1, list2);
                 computeVar2 = new ComputeClassVar2(currencyStatistics);
+
+                dataGridView3.Columns.Clear();
+                dataGridView3.Rows.Clear();
+
+                dataGridView3.Columns.Add("Date", "Date");
+                dataGridView3.Columns.Add("Currency_USD", "Currency USD");
+                dataGridView3.Columns.Add("Currency_EUR", "Currency EUR");
+
+                for (int i = 0; i < dates.Count; i++)
+                {
+                    dataGridView3.Rows.Add(dates[i].ToShortDateString(), list1[i], list2[i]);
+                }
+
             }
             else
             {
