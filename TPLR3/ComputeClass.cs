@@ -20,10 +20,10 @@ namespace TPLR3
 
     public class CurrencyStatistics
     {
-        public float maxUsdIndex;
-        public float maxEuIndex;
-        public float minUsdIndex;
-        public float minEuIndex;
+        public int maxUsdIndex;
+        public int maxEuIndex;
+        public int minUsdIndex;
+        public int minEuIndex;
 
         public List<DateTime> dateTimes;
         public List<float> Rub_To_USD_Сourse;
@@ -57,9 +57,9 @@ namespace TPLR3
             int max_index = stat.dateTimes.Count;
             for (int i = 1; i < max_index; i++)
             {
-                var usd_change = stat.Rub_To_USD_Сourse[i] - stat.Rub_To_USD_Сourse[i - 1];
-                var eu_change = stat.Rub_To_EU_Сourse[i] - stat.Rub_To_EU_Сourse[i - 1];
-                var date = stat.dateTimes[i];
+                float usd_change = stat.Rub_To_USD_Сourse[i] - stat.Rub_To_USD_Сourse[i - 1];
+                float eu_change = stat.Rub_To_EU_Сourse[i] - stat.Rub_To_EU_Сourse[i - 1];
+                DateTime date = stat.dateTimes[i];
                 change_statistics.Add(usd_change, eu_change, date);
             }
         }
