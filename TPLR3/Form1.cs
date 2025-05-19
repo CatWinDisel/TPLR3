@@ -141,8 +141,6 @@ namespace TPLR3
         }
 
         //Вкладка Sasha:
-
-
         private void button_Sasha_openFile_Click_1(object sender, EventArgs e)
         {
             try
@@ -195,6 +193,12 @@ namespace TPLR3
 
                 //Разблокируем 2 кнопку (в случае, когда надо обновить данные)
                 button2.Enabled = true;
+
+                //Разблокируем 3 кнопку после загрузки данных
+                button3.Enabled = true;
+
+                //Разблокируем 4 кнопку после загрузки данных
+                button4.Enabled = true;
             }
             else
             {
