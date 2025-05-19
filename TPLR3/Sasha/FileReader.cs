@@ -19,9 +19,10 @@ namespace TPLR3.Sasha
             {
                 string pathNow = Directory.GetCurrentDirectory();
                 //MessageBox.Show(pathNow.Remove(pathNow.Length - 16));
-                pathNow = pathNow.Remove(pathNow.Length - 29);
+                pathNow = pathNow.Remove(pathNow.Length - 16);
                 openFileDialog.InitialDirectory = pathNow;
                 openFileDialog.Filter = "Excel Files|*.xls;*xlsx;*.xlsm";
+                openFileDialog.RestoreDirectory = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     filePath = openFileDialog.FileName;
@@ -39,32 +40,47 @@ namespace TPLR3.Sasha
                 var range = worksheet.RangeUsed();
                 int rowCount = range.RowCount(); // Количество строк в выбранном листе
                 int columnCount = range.ColumnCount();
-                // Нахождение необходимых Specification(характеристик) в файле
+                
+                // Нахождение необходимых Date(даты) и Specification(характеристик) в файле
+                List<int> excelColumnList = Enumerable.Range(1, columnCount).ToList();
                 Dictionary<string, int> columns = new Dictionary<string, int>();
                 foreach (SpecificData specificData in data.GetAllData().Item2)
                 {
-                    int dataColumn = 0;
-                    for (int column = 1; column <= columnCount; column++)
-                    { // Проходим про всем колонкам в файле
-                        if (specificData.name == worksheet.Cell(1, column).Value.ToString())
-                        { // Если совпадение - сохраняем номер колонки
-                            dataColumn = column;
+                    int dataColumn = columns.Count;
+                    //MessageBox.Show("dataColumn = " + excelColumnList.Count);
+                    for (int i = 0; i < excelColumnList.Count; i++)
+                    { // Проходим про всем колонкам в файле и Если совпадение - сохраняем номер колонки
+                        if (worksheet.Cell(1, excelColumnList[i]).Value.ToString() == "Date")
+                        {
+                            columns.Add("Date", excelColumnList[i]);
+                            excelColumnList.RemoveAt(i);
+                        }
+                        if (specificData.name == worksheet.Cell(1, excelColumnList[i]).Value.ToString())
+                        {
+                            columns.Add(specificData.name, excelColumnList[i]);
+                            excelColumnList.RemoveAt(i);
                             break;
                         }
                     }
-                    if (dataColumn != 0)
-                        columns.Add(specificData.name, dataColumn);
-                    else MessageBox.Show("Файл Excel записан не верно!");
+                    if (dataColumn == columns.Count)
+                        throw new Exception("Файл Excel записан не верно!");
                 }
+
+                bool endcheck = false;
+                //MessageBox.Show(rowCount)
                 for (int row = 2; row <= rowCount; row++)
                 { // Идём построчно и добавляем необходимые данные в списки
-                    bool endcheck = false;
-                    /*foreach (int i in columns.Values)
-                        if (worksheet.Cell(i, row).Value == )
+                    // Проверка значений строк на null
+                    foreach (string i in columns.Keys)
+                    {
+                        if (worksheet.Cell(row, columns[i]).Value.ToString() == "")
                             endcheck = true;
+                    }
+                    // Если какая-то ячейка в строке пустая, то чтение файла завершается
                     if (endcheck)
-                        break;*/
-                    data.GetAllData().Item1.Add((DateTime)worksheet.Cell(row, 1).Value);
+                    { MessageBox.Show("Строка " + row + " имеет пустое значение\nСчитываение файла прекращено"); break; }
+                    // Занесение данных в экземляр класса StatisticData
+                    data.GetAllData().Item1.Add((DateTime)worksheet.Cell(row, columns["Date"]).Value);
                     foreach (SpecificData specificData in data.GetAllData().Item2)
                     {
                         specificData.AddToSpecificlist(worksheet.Cell(row, columns[specificData.name]).Value);
