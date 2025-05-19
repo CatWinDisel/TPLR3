@@ -33,9 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonOpenFileVar2 = new System.Windows.Forms.Button();
             this.label1Var2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelUSD = new System.Windows.Forms.Label();
             this.labelMaxDiffEUmn = new System.Windows.Forms.Label();
             this.labelMaxDiffEU = new System.Windows.Forms.Label();
             this.labelMaxDiffUSDmn = new System.Windows.Forms.Label();
@@ -66,6 +69,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonOpenFileVar2);
             this.tabPage1.Controls.Add(this.label1Var2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel1);
@@ -80,6 +84,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Michial";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFileVar2
+            // 
+            this.buttonOpenFileVar2.Location = new System.Drawing.Point(8, 549);
+            this.buttonOpenFileVar2.Name = "buttonOpenFileVar2";
+            this.buttonOpenFileVar2.Size = new System.Drawing.Size(165, 57);
+            this.buttonOpenFileVar2.TabIndex = 8;
+            this.buttonOpenFileVar2.Text = "Открыть файл";
+            this.buttonOpenFileVar2.UseVisualStyleBackColor = true;
+            this.buttonOpenFileVar2.Click += new System.EventHandler(this.buttonOpenFileVar2_Click);
             // 
             // label1Var2
             // 
@@ -102,19 +116,39 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelUSD);
             this.panel1.Controls.Add(this.labelMaxDiffEUmn);
             this.panel1.Controls.Add(this.labelMaxDiffEU);
             this.panel1.Controls.Add(this.labelMaxDiffUSDmn);
             this.panel1.Controls.Add(this.labelMaxDiffUSD);
-            this.panel1.Location = new System.Drawing.Point(8, 254);
+            this.panel1.Location = new System.Drawing.Point(8, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 127);
+            this.panel1.Size = new System.Drawing.Size(165, 132);
             this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Euro";
+            // 
+            // labelUSD
+            // 
+            this.labelUSD.AutoSize = true;
+            this.labelUSD.Location = new System.Drawing.Point(5, 8);
+            this.labelUSD.Name = "labelUSD";
+            this.labelUSD.Size = new System.Drawing.Size(30, 13);
+            this.labelUSD.TabIndex = 4;
+            this.labelUSD.Text = "USD";
             // 
             // labelMaxDiffEUmn
             // 
             this.labelMaxDiffEUmn.AutoSize = true;
-            this.labelMaxDiffEUmn.Location = new System.Drawing.Point(4, 42);
+            this.labelMaxDiffEUmn.Location = new System.Drawing.Point(4, 84);
             this.labelMaxDiffEUmn.Name = "labelMaxDiffEUmn";
             this.labelMaxDiffEUmn.Size = new System.Drawing.Size(91, 13);
             this.labelMaxDiffEUmn.TabIndex = 3;
@@ -123,7 +157,7 @@
             // labelMaxDiffEU
             // 
             this.labelMaxDiffEU.AutoSize = true;
-            this.labelMaxDiffEU.Location = new System.Drawing.Point(4, 29);
+            this.labelMaxDiffEU.Location = new System.Drawing.Point(4, 71);
             this.labelMaxDiffEU.Name = "labelMaxDiffEU";
             this.labelMaxDiffEU.Size = new System.Drawing.Size(90, 13);
             this.labelMaxDiffEU.TabIndex = 2;
@@ -132,7 +166,7 @@
             // labelMaxDiffUSDmn
             // 
             this.labelMaxDiffUSDmn.AutoSize = true;
-            this.labelMaxDiffUSDmn.Location = new System.Drawing.Point(4, 16);
+            this.labelMaxDiffUSDmn.Location = new System.Drawing.Point(4, 35);
             this.labelMaxDiffUSDmn.Name = "labelMaxDiffUSDmn";
             this.labelMaxDiffUSDmn.Size = new System.Drawing.Size(101, 13);
             this.labelMaxDiffUSDmn.TabIndex = 1;
@@ -141,7 +175,7 @@
             // labelMaxDiffUSD
             // 
             this.labelMaxDiffUSD.AutoSize = true;
-            this.labelMaxDiffUSD.Location = new System.Drawing.Point(3, 3);
+            this.labelMaxDiffUSD.Location = new System.Drawing.Point(3, 22);
             this.labelMaxDiffUSD.Name = "labelMaxDiffUSD";
             this.labelMaxDiffUSD.Size = new System.Drawing.Size(98, 13);
             this.labelMaxDiffUSD.TabIndex = 0;
@@ -150,9 +184,24 @@
             // numericUpDownWindowSizeVar2
             // 
             this.numericUpDownWindowSizeVar2.Location = new System.Drawing.Point(7, 124);
+            this.numericUpDownWindowSizeVar2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownWindowSizeVar2.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             this.numericUpDownWindowSizeVar2.Name = "numericUpDownWindowSizeVar2";
             this.numericUpDownWindowSizeVar2.Size = new System.Drawing.Size(142, 20);
             this.numericUpDownWindowSizeVar2.TabIndex = 4;
+            this.numericUpDownWindowSizeVar2.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
             // buttonPredictionVar2
             // 
@@ -188,7 +237,6 @@
             this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(863, 613);
             this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // tabPage2
             // 
@@ -245,6 +293,9 @@
         private System.Windows.Forms.Label labelMaxDiffEUmn;
         private System.Windows.Forms.Label labelMaxDiffEU;
         private System.Windows.Forms.Label label1Var2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelUSD;
+        private System.Windows.Forms.Button buttonOpenFileVar2;
     }
 }
 
