@@ -230,7 +230,7 @@ namespace TPLR3
         {
             //Создаем объект таблицы и добавляем колонки с нужными типами данных
             var table = new DataTable();
-            table.Columns.Add("Дата", typeof(DateTime));
+            table.Columns.Add("Date", typeof(DateTime));
             table.Columns.Add("Immigrants", typeof(float));
             table.Columns.Add("Emigrants", typeof(float));
 
@@ -310,6 +310,9 @@ namespace TPLR3
 
             //Отрисовка графика
             DrawTwoLineCharts(chart2, migration.dateTimes, migration.Immigrants, migration.Emigrants);
+
+            //Настраиваем ограничение на максимальный размер окна (по количеству дат, так как оно теперь увеличилось)
+            numericUpDown2.Maximum = migration.dateTimes.Count;
         }
 
         //Вкладка Kirill: Кнопка для подсчета максимального процента миграции (по модулю)
